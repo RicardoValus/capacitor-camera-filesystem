@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="title">
+      Capturar imagem
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="secondary">
+  <h3 *ngIf="images.length == 0" class="ion-padding ion-text-center">Tire uma foto, por favor!</h3>
+  <ion-list class="photos-list">
+    <ion-item *ngFor="let file of images" color="secondary">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="file.data"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        {{ file.name }}
+      </ion-label>
+      <ion-button slot="end" fill="clear" (click)="deleteImage(file)" color="danger">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="campicture">
+    <ion-fab-button (click)="selectImage()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

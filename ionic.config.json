@@ -1,0 +1,7 @@
+{
+  "name": "CamCapture",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
